@@ -275,6 +275,7 @@ section {
 }
 .email-link {
   display: inline-block;
+}
 .contact-details {
   display: flex;
   flex-direction: column;
@@ -350,32 +351,46 @@ section {
     font-size: 20vw;
   }
   .section-about {
-    padding: 4rem 2rem;
+    padding: 6rem 2rem 4rem; /* More top padding so it doesn't hit navbar */
   }
   .about-container {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
   }
   .about-brand {
-    font-size: 18vw;
+    font-size: 22vw;
     margin-bottom: 2rem;
+    transform: none !important; /* Force to rest position */
+    opacity: 1 !important;
   }
   .about-text-wrapper {
     margin-left: 0;
+    max-width: 100%;
+    transform: none !important; /* Force to rest position */
+    opacity: 1 !important;
   }
   .about-desc {
     font-size: 1.2rem;
+    line-height: 1.6;
+    padding: 0 1rem;
   }
   .section-works {
     padding: 4rem 2rem;
   }
   .section-title {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
+    font-size: 3rem;
+    margin-bottom: 3rem;
   }
   .works-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .work-item {
+    width: 100%;
+    aspect-ratio: 9/16;
+    margin: 0 auto;
   }
   .section-contact {
     padding: 4rem 1.5rem 2rem;

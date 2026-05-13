@@ -112,20 +112,22 @@ gsap.from(".work-item", {
   ease: "power4.out"
 });
 
-// Parallax effect on work items
-gsap.utils.toArray('.work-item').forEach((item, index) => {
-  const speed = index % 2 === 0 ? -40 : -80; // different speeds for 3D depth
-  gsap.to(item, {
-    scrollTrigger: {
-      trigger: ".works-grid",
-      start: "top bottom",
-      end: "bottom top",
-      scrub: 1
-    },
-    y: speed,
-    ease: "none"
+// Parallax effect on work items (Desktop only to prevent overlap)
+if (window.innerWidth > 768) {
+  gsap.utils.toArray('.work-item').forEach((item, index) => {
+    const speed = index % 2 === 0 ? -40 : -80; // different speeds for 3D depth
+    gsap.to(item, {
+      scrollTrigger: {
+        trigger: ".works-grid",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 1
+      },
+      y: speed,
+      ease: "none"
+    });
   });
-});
+}
 
 // Set current year in footer
 document.getElementById('year').textContent = new Date().getFullYear();
